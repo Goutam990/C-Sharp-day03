@@ -1,0 +1,104 @@
+namespace C__fundamentals_day_03
+{
+
+    public class Animal
+    {
+        public Animal()
+        {
+            Console.WriteLine("constructor is invoked");
+        }
+    }
+
+    public class Dog : Animal
+    {
+        //Construtor chaining follow 
+    }
+
+
+    // constructor types ---
+    public class Empolyee
+    {
+        public string name { get; set; }
+
+        //default constuctor
+        public Empolyee()
+        {
+            Console.WriteLine("I am a default constructor");
+        }
+
+        // parameterized Constructor
+        public Empolyee(string name)
+        {
+            this.name = name;
+            Console.WriteLine(name);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // implicit datatype - I leave it for the compiler to identify the type.
+            // explicit datatype - I manually write the datatype ... compiler will be free from cheaking the datatype by its own. 
+
+
+            //=========================================================
+            // Constructor
+            //a constructor is a special method within a class that is automatically invoked when an instance(object) of that class is created.Its primary purpose is to initialize the object.Giving intial values to feild nd properties.
+
+            // Key Points about Constructor
+            //1. Same Name as the Class
+            //2.No Return Type - not even void -- mtlb void bhi return type nhi hoga. 
+            //3.Constructors are Automatic Invoked -- when object is initilized/created via a new keyword.
+            //4.Constructor ka kaam ?
+            //Initialization - Initial values ko set krna kiski ? 
+            // object ki jo fields aur property h uski initial value setup krna.
+
+            // Constructor overloading is also possible
+            // Meaning I have a power to have multiple costructor with diffrent list of parameters. -- allows for various ways to inialize an object.   
+
+
+            // Constructor does have Access modifiers like public,protected,private or internal too.
+            // These Assess modifiers define ki that particular Constructor will be accesed to which extent.
+            // In simple words I can say -- it control where the constructor can be accessed from.
+
+
+            //Animal ani = new Animal();
+            // Animal class - constructor will be invoked. 
+            // output - constructor is invoked -- kyuki constructor ke andr mene clg likha h . 
+            // 2 points are clear -
+            // 1) Automatically invoked at obj creation
+            // 2)Constructor are used to initilize an object. 
+
+            //============================Types of Constructor we have=======================
+            // 1 . Default Constructor.
+            // 2. Parameterized Constrcutor.
+
+            //Empolyee em = new Empolyee(); // output - I am a default constructor
+            // Empolyee em = new Empolyee("Aaraadhya"); // output - Aaraadhya   
+
+            // Here is a Note - When we pass aruguments to a constructor when parameterized constructor will be invoked. 
+            // When we pass nothing then default constructor will be called. 
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
