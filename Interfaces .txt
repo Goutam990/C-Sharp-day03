@@ -1,0 +1,22 @@
+// ---------Interfaces --------------------------
+
+using System;
+
+public class Program
+{
+    interface ImyInterface {
+        void print(); // by default interface ki methods - public,abstract hoti h
+    }
+    class another : ImyInterface {
+         public void print(){
+            Console.WriteLine("Hello");
+        }
+    }
+    public static void Main(string[] args)
+    {
+        another an = new another();
+        an.print();
+    }
+}
+
+---------Interfaces are loosely coupled -----------------
