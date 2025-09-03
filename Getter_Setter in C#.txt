@@ -1,0 +1,65 @@
+namespace C__fundamentals_day_03
+{
+
+    public class Animal
+    {
+        public Animal() {
+            Console.WriteLine("constructor is invoked");
+        }
+    }
+
+    public class Dog : Animal
+    {
+        //Construtor chaining follow 
+    }
+
+
+    // constructor types ---
+    public class Empolyee
+    {
+        public string name { get; set; }
+
+        //default constuctor
+        public Empolyee()
+        {
+            Console.WriteLine("I am a default constructor");
+        }
+
+        // parameterized Constructor
+        public Empolyee(string name)
+        {
+            this.name = name;
+            Console.WriteLine(name);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+        
+
+//=============================Getter Setter ( in c# is similar to java):- 
+
+            // public string name { get; set; } // kuch is type s likhte h . 
+            // suppose Employee class h nd uske andr 
+            // string name {get; set;} ki gae h . 
+            // name ko main method ke andr s set krne ke liye
+            // we will create an obj of emplyee class as em. 
+            // then ( em.name = "jobhiNamedenaH"; )
+            // then get -- ya access krne ke liye em.name ko clg kr denge . 
+
+            /*
+            Empolyee em = new Empolyee();
+            em.name = "Hatim";             // obj.property  = "joBhiValueAssignkrniho"
+            Console.WriteLine(em.name);    // "Hatim"
+            */
+
+
+        }
+    }
+}
+
+
+
