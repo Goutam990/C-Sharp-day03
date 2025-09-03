@@ -1,134 +1,50 @@
-﻿using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-
-namespace C_Sharp_oops
+﻿namespace C__fundamentals_day_03
 {
-     
-            //Encapuslation + Abstraction(public data members + public methods)
-            class MyclassEncapsulation_Abstraction {
-             
-            private string name = "Goutam";
-             
-             // public method to access the private data variable
-
-             public string Getname()
-        {
-                return name;
-        }
-
-             public void Setname(string name)
-            { this.name = name; }
-
-               public void testingmethod()
-            {
-                Console.WriteLine("Hello i am under a class");
-            }    
-            }
-    
-            // public Access modifier example  - ( Abstraction - public ) 
-            public class car1
-    {
-        public string carModel = "Brezza"; // Accessible from anywhere.
-    }
-
-    public class car2 : car1
-    {
-        public string GetcarModel()
-        {
-            return carModel;
-        }
-    }
-
-    //private Access Modifier example - (Abstraction - private)
-    public class car3
-    {
-        public string Engine_Serial_No = "Mp43423u"; // Top secret
-
-        //within the car1 class -- we have methods
-        public void printEng_Serial_No()
-        {
-           Console.WriteLine(Engine_Serial_No); // Within the class -- Accessible h  
-        }
-    }
-
-    //outside of the class -- private members ---> not accessible
-    public class car4 : car3
-    {
-        public string getSerialNo()
-        {
-            return Engine_Serial_No; // subclass can not access the private members defined in   base class
-        }
-    }
-
-    //==========================================
-    //protected Access Modifier example --
-    public class car5
-    {
-        public string car_designCode = "579345857340"; // Family secret.
-
-        
-        public string printCar_designCode()
-        {
-            return car_designCode; // Within the class -- To accessible h hi   
-        }
-    }
-
-    //outside of the class -- protected members --->  are accessible
-    public class car6 : car5
-    {
-        public string printCar_designCodeo()
-        {
-            return car_designCode; // protected members can be accessed by the sub-class also.
-        }
-    }
-
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Oops 
-            // oops provides us a way to organize our code using classes. 
-            // 4 piller of oops are - Abstraction, Inheritance, Polymorphism , Encapusultaion. 
-            MyclassEncapsulation_Abstraction myclass = new MyclassEncapsulation_Abstraction();
-            myclass.testingmethod();
 
-            myclass.Setname("Arusha");
-            string returnedName = myclass.Getname();
-            Console.WriteLine(returnedName);
+            // implicit datatype - I leave it for the compiler to identify the type.
+            // explicit datatype - I manually write the datatype ... compiler will be free from cheaking the datatype by its own. 
 
-            // 1. Abstraction 
-            // using assess modifier -- public , protected , private
-            // another example of abstraction is in the backend . (somewhat complicated )
-            //for now Abstraction only means to us by access modifiers. 
+            // var keyword in c#
+            //var keyword - instead of any datatype you write var. If you know the assinging value. 
+            // C# compiler automatically figures out the type of value that i have assigned to it. 
+            // Me to c# comiler -
+            // "Hey C#, create a variable for me and call it name. Oh, and by the way, I'm putting 'Goutam_Tiwari' inside in it."
+            // c# will respond in this way - 
+            //C# (with var):
+            //"Okay, I see you're putting 'Goutam_Tiwari' (which is text) in name, so I'll automatically make name a string variable."
 
-            //public access modifier - 
-            // anywhere accessible -- class , sub class, another can access the data members having public modifier infront of them 
+            //agr developer ke pass clearity h 'Assigning Value' ki. then var use krne jada better h
+            //var name = "Goutam";
+            //Console.WriteLine(name);
 
-            //================================public access modifier example ================
-            // creating an object of subclass nd trying to acccess public data members. 
+            //limitations to where var can be used:
+            //1.    must be declared at the time of initilialization.
+            // Initial value cheye hoti h type ko determine krne ke liye. 
 
-            car2 c2 = new car2();
-            string returned_carModel = c2.GetcarModel();
-            Console.WriteLine(returned_carModel);
+            //2. Used in variables that are being  declared within a method, property accessor, or other local scope.
 
+            //3. var name = null
+            //easa nhi kr skte ---> why -- because null doesn't provide enough information for type inference.
+            //var Firstname = null;
 
-            //==================================private access modifier example================
-            //car4 c4 = new car4();
-           // string returned_Eng_SNo = c4.printEng_Serial_No(); // cannot access the private members here -- (Serial No - is a private member of c3 class)
-            //Console.WriteLine (returned_Eng_SNo);
+            //4.var can improve code readability , especially when dealing with complex type.
 
+            // 5. Null can be assigned but. 
+            //var name_withNull = (string)null; // explicitly i write string Compiler infers 'string'
+            //Console.WriteLine(name_withNull);
 
-            //==================================protected access modifier example==============
-            car6 car6 = new car6();
-            string returend_DesignCode = car6.printCar_designCode();
-            Console.WriteLine(returend_DesignCode);
-
-
-
-
-            
-
-
+            // empty string bhi pass kr skte ho.
+            /*
+            var name = "";   
+            Console.WriteLine(name);
+            Console.WriteLine(name);
+            */
+            var name;
+            Console.WriteLine(name);
         }
     }
 }
